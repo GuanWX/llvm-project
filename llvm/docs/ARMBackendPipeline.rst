@@ -319,7 +319,10 @@ TableGen-Generated Instruction Descriptions
 
 These ``.td`` files define the instruction encoding, operands, assembly syntax,
 and pattern-matching rules. The ``llvm-tblgen`` tool processes them to generate
-C++ code for instruction selection, encoding, and printing.
+C++ code for instruction selection, encoding, and printing. In particular, the
+``SelectCode(N)`` method called from ``ARMDAGToDAGISel::Select()`` uses the
+patterns defined in these ``.td`` files to match SelectionDAG nodes to ARM
+machine instructions.
 
 
 Stage 4: Machine-Level Passes
